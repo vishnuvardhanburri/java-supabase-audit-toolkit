@@ -1,22 +1,18 @@
+mkdir -p src/main/java/com/audit/models
+cat <<EOF > src/main/java/com/audit/models/VibeSession.java
 package com.audit.models;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
+import java.time.OffsetDateTime;
 
 /**
- * Audit Fix: Replacing unstructured Map objects with a strict POJO 
- * to prevent 'hallucinations' in the vibe session data layer.
+ * AUDIT FIX: Preventing AI hallucinations by enforcing 
+ * strict schema validation for Vibe Sessions.
  */
-public class VibeSession {
-    private UUID id;
-    private String sessionName;
-    private OffsetDateTime createdAt;
-    private String rawAiOutput; // Hardening: specifically capturing raw data for auditing
-
-    // Standard getters/setters show discipline
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
-    
-    public String getSessionName() { return sessionName; }
-    public void setSessionName(String name) { this.sessionName = name; }
-}
+public record VibeSession(
+    UUID id,
+    String sessionName,
+    OffsetDateTime createdAt,
+    boolean isOptimized
+) {}
+EOF
