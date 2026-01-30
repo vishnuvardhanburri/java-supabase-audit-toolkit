@@ -1,8 +1,12 @@
-# Java + Supabase Production Audit Toolkit
+# Java-Supabase Audit Toolkit
 
-This repository demonstrates my approach to hardening Java backends integrated with Supabase.
+This repository serves as a framework for auditing and optimizing Java backends integrated with Supabase. 
 
-### Audit Checklist:
-1. **Hallucination Detection**: Automated Checkstyle and SonarQube integration to identify unstructured AI-generated code.
-2. **Supabase Schema Validation**: Ensuring PostgreSQL constraints match Java Entity definitions.
-3. **Vibe Session Cleanup**: Refactoring casual code into structured Service-Repository patterns.
+## Audit Strategy for "Vibe Session" Optimization:
+1. **Type Hardening**: Replacing AI-generated loose types with strict Java POJOs to eliminate data hallucinations.
+2. **Supabase Sync**: Verifying that Java Entity constraints match Postgres RLS (Row Level Security) policies.
+3. **Checkstyle Integration**: Automated enforcement of industry-standard coding patterns.
+
+## Performance Focus:
+- Database connection pooling optimization for Supabase.
+- Identifying and resolving N+1 query issues in "vibe" logic.
