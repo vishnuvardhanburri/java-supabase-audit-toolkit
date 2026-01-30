@@ -1,12 +1,12 @@
-# Java-Supabase Audit Toolkit
+# Java + Supabase Audit Toolkit
 
-This repository serves as a framework for auditing and optimizing Java backends integrated with Supabase. 
+This repository contains the frameworks I use to audit and optimize Java backends integrated with Supabase.
 
-## Audit Strategy for "Vibe Session" Optimization:
-1. **Type Hardening**: Replacing AI-generated loose types with strict Java POJOs to eliminate data hallucinations.
-2. **Supabase Sync**: Verifying that Java Entity constraints match Postgres RLS (Row Level Security) policies.
-3. **Checkstyle Integration**: Automated enforcement of industry-standard coding patterns.
+### 🛡️ Audit Strategy:
+* **Anti-Hallucination Layer**: Implementing strict POJOs/Records to replace loose JSON maps.
+* **Schema Validation**: Ensuring Java entity constraints match Supabase PostgreSQL RLS policies.
+* **Automated Quality Gate**: Using Checkstyle to enforce clean code standards.
 
-## Performance Focus:
-- Database connection pooling optimization for Supabase.
-- Identifying and resolving N+1 query issues in "vibe" logic.
+### 📈 Database Improvements:
+* Optimizing connection pooling for Supabase.
+* Implementing proper indexing for high-frequency "vibe" sessions.
